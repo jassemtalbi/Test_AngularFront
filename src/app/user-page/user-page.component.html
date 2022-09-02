@@ -1,0 +1,21 @@
+<a href="/AddEmploye">Add Employe</a>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Dep Name</th>
+            <th>Email</th>
+
+        </tr>
+    </thead>
+    <tbody *ngFor="let R of ListAll">
+        <tr>
+            <td>{{R.user_Name}}</td>
+            <td>{{R.id_Department}}</td>
+            <td>{{R.email}}</td>
+
+
+        </tr>
+
+    </tbody>
+</table>

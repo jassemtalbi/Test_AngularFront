@@ -1,0 +1,44 @@
+<a href="/AddEmployeAdmin">Add Employe</a>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Dep Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody *ngFor="let R of ListAll">
+        <tr>
+            <td>{{R.user_Name}}</td>
+            <td>{{R.id_Department}}</td>
+            <td>{{R.email}}</td>
+            <td> <input type="submit" value="Update" (click)="FindById(R.id)">
+                <input type="submit" value="Delete" (click)="DeleteEmploye(R.id)">
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
+
+<div *ngIf="check==true">
+    <form (ngSubmit)="Update()" #f="ngForm">
+        <label for="lname">User Name</label>
+        <input type="text" id="userName" name="userName" placeholder="Your User name.." [(ngModel)]="data.user_Name">
+        <label for="fname">Email</label>
+
+        <input type="text" id="Email" name="email" placeholder="Your Email.." [(ngModel)]="data.email">
+        <label for="lname">Password</label>
+        <input type="text" id="Password" name="password" placeholder="Your Password.." [(ngModel)]="data.password">
+
+        <label for="lname">Role </label>
+        <input type="text" id="Role" name="id_role" placeholder="Your Role.." [(ngModel)]="data.id_role">
+        <label for="lname">Departement</label>
+        <input type="text" id="Departement" name="id_Department" placeholder="Your Departement.." [(ngModel)]="data.id_Department">
+
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
