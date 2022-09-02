@@ -49,14 +49,10 @@ export class GettAllComponent implements OnInit {
       (data) => {
         this.check=true;
         this.data=data;
-        if(data.id_role==1)
-        {
-          data.id_role="Super Admin";
-        }
+       
             },
       errors => {
         console.log(errors);
-        alert(errors.status);
       },
     );
   }
@@ -66,12 +62,12 @@ export class GettAllComponent implements OnInit {
       (data) => {
        
         this.check=false;
+       
         this.ALL();
 
             },
       errors => {
         console.log(errors);
-        alert(errors.status);
       },
     );
   }
